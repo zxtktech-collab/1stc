@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Price List — Dongguan Fortune Printing Equipment Co., Ltd</title>
+  <title>Proforma Invoice — Nassif Printing Supplies</title>
   <style>
     @page {
       size: A4;
@@ -18,392 +18,283 @@
     html, body {
       margin: 0;
       padding: 0;
-      color: #221816;
+      color: #111;
       background: #fff;
-      font-family: "Noto Sans", "Liberation Sans", sans-serif;
-      font-size: 11.5px;
-      line-height: 1.45;
-    }
-
-    .letterhead {
-      margin-bottom: 14px;
-    }
-
-    .head-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .identity {
-      flex: 1;
-      padding-top: 2px;
-    }
-
-    .name {
-      margin: 0;
-      font-family: "Noto Serif", "Liberation Serif", serif;
-      font-weight: 500;
-      font-size: 40px;
-      line-height: 1;
-      letter-spacing: 0.4px;
-      text-align: center;
-      color: #221816;
-    }
-
-    .role {
-      margin: 6px 0 12px;
-      font-family: "Noto Serif", "Liberation Serif", serif;
-      font-size: 16px;
-      text-align: center;
-      letter-spacing: 0.3px;
-    }
-
-    .contacts {
-      margin: 0 auto;
-      width: 100%;
-      max-width: 460px;
-      border-collapse: collapse;
-      font-family: "Noto Serif", "Liberation Serif", serif;
-      font-size: 12.5px;
+      font-family: "Liberation Serif", "Times New Roman", Times, serif;
+      font-size: 11px;
       line-height: 1.35;
     }
 
-    .contacts td {
-      vertical-align: top;
-      padding: 1px 0;
+    .head {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
-    .contacts .label {
-      width: 62px;
-      white-space: nowrap;
-    }
-
-    .contacts .colon {
-      width: 14px;
-      text-align: center;
-    }
-
-    .mark {
-      width: 132px;
-      flex: 0 0 132px;
-      margin-top: 4px;
-    }
-
-    .mark img {
-      display: block;
-      width: 132px;
+    .logo {
+      width: 46px;
       height: auto;
+      margin-top: 2px;
     }
 
-    .banner {
-      margin-top: 12px;
-      background: #1d2089;
-      color: #fff;
+    .co {
+      flex: 1;
       text-align: center;
+      padding-top: 4px;
+    }
+
+    .co-name {
       font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-      padding: 7px 10px 8px;
+      font-size: 16px;
       line-height: 1.2;
     }
 
-    .company-cn {
-      margin: 7px 0 0;
+    .co-sub {
+      font-weight: 700;
+      font-size: 8px;
+      line-height: 1.35;
+      margin-top: 1px;
+    }
+
+    h1 {
+      margin: 16px 0 8px;
       text-align: center;
-      font-family: "WenQuanYi Micro Hei", "Droid Sans Fallback", "Noto Sans CJK SC", sans-serif;
+      font-family: "Liberation Sans", Arial, sans-serif;
       font-size: 20px;
       font-weight: 700;
-      letter-spacing: 0.42em;
-      line-height: 1.2;
-      padding-left: 0.42em;
-    }
-
-    .doc-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin: 16px 0 10px;
-      padding-bottom: 6px;
-      border-bottom: 1.5px solid #1d2089;
-    }
-
-    .doc-title {
-      margin: 0;
-      font-family: "Noto Serif", "Liberation Serif", serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      color: #1d2089;
+      letter-spacing: 0.2px;
     }
 
     .meta {
       text-align: right;
-      font-size: 11.5px;
-      line-height: 1.45;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-size: 11px;
+      line-height: 1.55;
+      margin-bottom: 8px;
     }
 
-    .meta strong {
+    .to {
+      margin: 0 0 2px;
+      font-size: 12px;
+    }
+
+    .intro {
+      margin: 12px 0 6px;
       font-weight: 700;
+      font-size: 11px;
     }
 
-    .parties {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
+    table.goods {
+      width: 100%;
+      border-collapse: collapse;
       margin-bottom: 12px;
     }
 
-    .party {
-      width: 58%;
-    }
-
-    .party.right {
-      width: 38%;
-      text-align: right;
-    }
-
-    .kicker {
-      margin: 0 0 3px;
+    table.goods th {
+      background: #d9d9d9;
+      font-family: "Liberation Sans", Arial, sans-serif;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #1d2089;
-    }
-
-    .party strong {
-      font-size: 13px;
-    }
-
-    .lead {
-      margin: 0 0 10px;
-    }
-
-    table.prices {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    table.prices th {
-      background: #1d2089;
-      color: #fff;
-      font-weight: 700;
-      font-size: 10.5px;
-      letter-spacing: 0.04em;
-      text-align: left;
-      padding: 7px 8px;
-    }
-
-    table.prices th.num,
-    table.prices td.num {
-      width: 32px;
       text-align: center;
+      padding: 5px 4px;
+      border-bottom: 1px solid #111;
     }
 
-    table.prices th.money,
-    table.prices td.money {
-      width: 110px;
+    table.goods td {
+      font-size: 11px;
+      padding: 6px 4px 7px;
+      border-bottom: 1px solid #111;
+      vertical-align: top;
+    }
+
+    table.goods td.no,
+    table.goods td.qty {
+      text-align: center;
+      width: 46px;
+    }
+
+    table.goods td.price,
+    table.goods td.amt {
       text-align: right;
       white-space: nowrap;
+      width: 78px;
+      padding-right: 8px;
+    }
+
+    table.goods th.price,
+    table.goods th.amt {
+      width: 78px;
+    }
+
+    table.goods th.qty {
+      width: 72px;
+    }
+
+    table.goods th.no {
+      width: 52px;
+    }
+
+    .terms p,
+    .beneficiary p,
+    .pay p {
+      margin: 0 0 2px;
+    }
+
+    .terms {
+      margin-top: 8px;
+    }
+
+    .beneficiary {
+      margin-top: 8px;
+      background: #d9d9d9;
+      padding: 4px 6px 5px;
+      font-family: "Liberation Sans", Arial, sans-serif;
       font-weight: 700;
+      font-size: 10.5px;
     }
 
-    table.prices th.money {
-      font-weight: 700;
+    .beneficiary .label {
+      font-size: 11px;
     }
 
-    table.prices td {
-      padding: 8px;
-      vertical-align: top;
-      border-bottom: 1px solid #d9dce8;
-    }
-
-    table.prices tbody tr:nth-child(even) td {
-      background: #f4f5fb;
-    }
-
-    .model {
-      font-weight: 700;
-      font-size: 12.5px;
-    }
-
-    .includes {
-      margin-top: 2px;
-      color: #3c3836;
-    }
-
-    .warranty {
-      margin-top: 2px;
-      color: #1d2089;
-      font-weight: 700;
-    }
-
-    .notes {
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .notes li {
-      position: relative;
-      padding-left: 12px;
-      margin: 2px 0;
-    }
-
-    .notes li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 5px;
-      height: 5px;
-      background: #1d2089;
-    }
-
-    .close {
-      margin-top: 16px;
+    .pay-row {
       display: flex;
+      align-items: flex-start;
       justify-content: space-between;
-      align-items: flex-end;
+      gap: 8px;
+      margin-top: 10px;
     }
 
-    .sign .name-sign {
-      margin: 10px 0 0;
-      font-family: "Noto Serif", "Liberation Serif", serif;
-      font-size: 16px;
+    .pay {
+      width: 72%;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-size: 9px;
+      line-height: 1.35;
     }
 
-    .sign .role-sign {
-      margin: 0;
-    }
-
-    .fine {
-      margin-top: 14px;
-      padding-top: 6px;
-      border-top: 1px solid #d9dce8;
+    .pay .dear {
       font-size: 10px;
-      color: #5c564f;
+      margin-bottom: 4px;
+    }
+
+    .stampbox {
+      width: 26%;
       text-align: center;
+      padding-top: 8px;
+    }
+
+    .stampbox .by {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+
+    .stamp {
+      width: 118px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .sign {
+      width: 78px;
+      height: auto;
+      display: block;
+      margin: -18px auto 0;
     }
   </style>
 </head>
 <body>
-  <header class="letterhead">
-    <div class="head-row">
-      <div class="identity">
-        <h1 class="name">Jackie Peng</h1>
-        <p class="role">General Manager</p>
-        <table class="contacts">
-          <tr>
-            <td class="label">Phone</td>
-            <td class="colon">:</td>
-            <td>+8618576764634</td>
-          </tr>
-          <tr>
-            <td class="label">Email</td>
-            <td class="colon">:</td>
-            <td>ctcpmachine@163.com</td>
-          </tr>
-          <tr>
-            <td class="label">Web</td>
-            <td class="colon">:</td>
-            <td>www.ctcpmachine.com</td>
-          </tr>
-          <tr>
-            <td class="label">Add</td>
-            <td class="colon">:</td>
-            <td>2-5#, Shimei 2nd Ave, Wanjiang Str,<br>Dongguan City, Guangdong Province, P. R. C 523000</td>
-          </tr>
-        </table>
-      </div>
-      <div class="mark">
-        <img src="assets/fortune-ctp-mark.png" alt="Fortune mark, focus on CTP">
-      </div>
+  <header class="head">
+    <img class="logo" src="assets/pi-logo.png" alt="Fortune">
+    <div class="co">
+      <div class="co-name">Dongguan Fortune Printing Equipment Co.,Ltd</div>
+      <div class="co-sub">Room 101, 2-5# shimei 2nd Ave, Wanjiang Str,Dongguan,Guangdong,China 523000</div>
+      <div class="co-sub">Tel: +86-185-7676-4634 Email:ctcpmachine@163.com</div>
     </div>
-    <div class="banner">Dongguan Fortune Printing Equipment Co.,Ltd</div>
-    <p class="company-cn">东莞市富翁印刷设备有限公司</p>
   </header>
 
-  <div class="doc-head">
-    <h2 class="doc-title">PRICE LIST</h2>
-    <div class="meta">
-      <div><strong>Date</strong> &nbsp; 28 September 2026</div>
-      <div><strong>Ref.</strong> &nbsp; FP-PL-20260928</div>
-    </div>
+  <h1>Proforma Invoice</h1>
+
+  <div class="meta">
+    <div>Date: Sep 28th, 2026</div>
+    <div>Invoice NO.:2809202601</div>
   </div>
 
-  <div class="parties">
-    <div class="party">
-      <p class="kicker">Quoted to</p>
-      <strong>Rita Nahra</strong><br>
-      Purchasing Manager<br>
-      Nassif Printing Supplies<br>
-      Dekwaneh - Zone 2 - St. 72 - Nassif Bldg.<br>
-      Tel: +961 1 498383 / 84<br>
-      www.nassif-group.com
-    </div>
-    <div class="party right">
-      <p class="kicker">Issued by</p>
-      <strong>Jackie Peng</strong><br>
-      General Manager<br>
-      Dongguan Fortune Printing Equipment Co., Ltd
-    </div>
-  </div>
+  <p class="to">To: Nassif Printing Supplies</p>
+  <p class="to">Attn: Rita Nahra, Purchasing Manager</p>
+  <p class="to">Add: Dekwaneh - Zone 2 - St. 72 - Nassif Bldg.</p>
+  <p class="to">Tel: +961 1 498383 / 84</p>
 
-  <p class="lead">Further to your inquiry, each model is priced separately, in United States Dollars.</p>
+  <p class="intro">Fortune CTCP machines below:</p>
 
-  <table class="prices">
+  <table class="goods">
     <thead>
       <tr>
-        <th class="num">No.</th>
-        <th>Model</th>
-        <th>Included</th>
-        <th>Warranty</th>
-        <th class="money">Price (USD)</th>
+        <th class="no">Item NO.</th>
+        <th>Goods description</th>
+        <th class="price">Price /pcs</th>
+        <th class="qty">quantity(pcs)</th>
+        <th class="amt">Amount(USD)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="num">1</td>
-        <td>
-          <div class="model">Online CTCP machine</div>
-          <div class="includes">Aurora U864</div>
-        </td>
-        <td>Autoloader, computer, processor, brand new laser diodes, and brand new optical fiber</td>
-        <td>2 years</td>
-        <td class="money">21,000</td>
+        <td class="no">1</td>
+        <td>Online CTCP machine Aurora U864, with autoloader, computer, processor, brand new laser diodes and brand new optical fiber</td>
+        <td class="price">21,000.00</td>
+        <td class="qty">1</td>
+        <td class="amt">21,000.00</td>
       </tr>
       <tr>
-        <td class="num">2</td>
-        <td>
-          <div class="model">Offline CTCP machine</div>
-          <div class="includes">Ausetter U864</div>
-        </td>
-        <td>Computer, processor, brand new laser diodes, and brand new optical fiber</td>
-        <td>2 years</td>
-        <td class="money">18,000</td>
+        <td class="no">2</td>
+        <td>Offline CTCP machine Ausetter U864, with computer, processor, brand new laser diodes and brand new optical fiber</td>
+        <td class="price">18,000.00</td>
+        <td class="qty">1</td>
+        <td class="amt">18,000.00</td>
       </tr>
     </tbody>
   </table>
 
-  <ul class="notes">
-    <li>Prices are in United States Dollars (USD).</li>
-    <li>These are separate prices for different models.</li>
-    <li>Both models include a computer, processor, brand new laser diodes, and brand new optical fiber. The online model also includes an autoloader.</li>
-    <li>Each machine is covered by a two-year warranty.</li>
-  </ul>
-
-  <div class="close">
-    <p>We look forward to your order.</p>
-    <div class="sign">
-      <p class="kicker">Regards</p>
-      <p class="name-sign">Jackie Peng</p>
-      <p class="role-sign">General Manager</p>
-    </div>
+  <div class="terms">
+    <p>Terms&amp; conditions:</p>
+    <p>Ship terms: CNF by air, freight prepaid by seller, door to door service. Exclude any tax or duties outside China.</p>
+    <p>Payment terms: TT, pay 100% in advance.</p>
+    <p>Delivery time: in 7 days after deposit confirmed.</p>
+    <p>Warranty: 2 years</p>
   </div>
 
-  <p class="fine">Dongguan Fortune Printing Equipment Co., Ltd &nbsp;·&nbsp; 2-5#, Shimei 2nd Ave, Wanjiang Str, Dongguan City, Guangdong Province, P. R. C 523000 &nbsp;·&nbsp; +8618576764634 &nbsp;·&nbsp; ctcpmachine@163.com &nbsp;·&nbsp; www.ctcpmachine.com</p>
+  <div class="beneficiary">
+    <p class="label">Beneficiary:</p>
+    <p>Dongguan Fortune Printing Equipment Co.,Ltd</p>
+    <p>Room 101, 2-5# shimei 2nd Ave, Wanjiang Str,Dongguan,Guangdong,China 523000</p>
+    <p>Tel: +86-185-7676-4634 Email:ctcpmachine@163.com</p>
+  </div>
+
+  <div class="pay-row">
+    <div class="pay">
+      <p class="dear">Dear valued customer,</p>
+      <p>Please make the payment via CHATS /SWIFT:</p>
+      <p>Amount:_______</p>
+      <p>To:</p>
+      <p>Account number：63003735610</p>
+      <p>Account name：DONGGUAN FORTUNE PRINTING EQUIPMENT CO.,LTD（If the account name is too long, you can continue filling it into the address field.）</p>
+      <p>Bank name：JPMorgan Chase Bank N.A., Hong Kong Branch</p>
+      <p>SWIFT/BIC code：CHASHKHH （CHASHKHHXXX*If 11 characters are required）</p>
+      <p>Sort code：007</p>
+      <p>Branch Code：863</p>
+      <p>Bank address：18/F, 20/F, 22-29/F, CHATER HOUSE, 8 CONNAUGHT ROAD CENTRAL, HONG KONG</p>
+      <p>Country/region：Hong Kong (China)</p>
+      <p>Account type：Business Account</p>
+      <p>Payment method：For the payment of goods, please make a SWIFT/CHATS/FPS Payment</p>
+      <p>Notes：Please include [Buyer's Name, Invoice/Contract Number, and Product Name] in the memo or note section when making the payment.</p>
+    </div>
+    <div class="stampbox">
+      <div class="by">Stamped by</div>
+      <img class="stamp" src="assets/pi-stamp.png" alt="Company stamp">
+      <img class="sign" src="assets/pi-signature.png" alt="Signature">
+    </div>
+  </div>
 </body>
 </html>
