@@ -31,7 +31,8 @@ ROW = Color(0.973, 0.961, 0.937)
 PAGE_W, PAGE_H = A4
 MARGIN = 36
 
-# Each price is for one machine, EXW, with freight to the Guangzhou warehouse included.
+# Each price is one complete set: CTCP engine, processor, and computer.
+# Trade term is EXW, with freight to the Guangzhou warehouse included.
 MACHINES = [
     {
         "brand": "CRON",
@@ -132,8 +133,8 @@ def draw_intro(c):
     c.drawString(MARGIN, y, "Three CTP machines")
 
     body = (
-        "Each price is for one machine. The trade term is EXW, and freight "
-        "to the Guangzhou warehouse is included."
+        "Every price is one complete set: CTCP engine, processor, and computer. "
+        "The trade term is EXW, and freight to the Guangzhou warehouse is included."
     )
     lines = wrap_text(c, body, "Inter", 10, PAGE_W - MARGIN * 2)
     text_y = y - 22
@@ -178,7 +179,7 @@ def draw_table(c, top):
     x = MARGIN
     width = PAGE_W - MARGIN * 2
     header_h = 28
-    row_h = 78
+    row_h = 88
     table_h = header_h + row_h * len(MACHINES)
     bottom = top - table_h
     radius = 6
@@ -206,26 +207,30 @@ def draw_table(c, top):
             c.rect(x, cursor, width, row_h, fill=1, stroke=0)
 
         c.setFillColor(GOLD_SOFT)
-        c.circle(x + 28, cursor + 40, 12, fill=1, stroke=0)
+        c.circle(x + 28, cursor + 44, 12, fill=1, stroke=0)
         c.setFillColor(NAVY)
         c.setFont("Inter-Semi", 8)
-        c.drawCentredString(x + 28, cursor + 37, f"{index + 1:02d}")
+        c.drawCentredString(x + 28, cursor + 41, f"{index + 1:02d}")
 
         c.setFillColor(GOLD)
         c.setFont("Inter-Medium", 8)
-        c.drawString(x + 52, cursor + 50, machine["brand"])
+        c.drawString(x + 52, cursor + 62, machine["brand"])
 
         c.setFillColor(INK)
         c.setFont("Inter-Semi", 14)
-        c.drawString(x + 52, cursor + 30, machine["model"])
+        c.drawString(x + 52, cursor + 44, machine["model"])
 
         c.setFillColor(MUTED)
-        c.setFont("Inter", 9)
-        c.drawString(x + 52, cursor + 14, machine["detail"])
+        c.setFont("Inter", 8.5)
+        c.drawString(x + 52, cursor + 28, machine["detail"])
+
+        c.setFillColor(INK)
+        c.setFont("Inter", 8.5)
+        c.drawString(x + 52, cursor + 14, "CTCP engine  +  processor  +  computer")
 
         c.setFillColor(NAVY)
         c.setFont("Inter-Bold", 16)
-        c.drawRightString(x + width - 18, cursor + 32, money(machine["price"]))
+        c.drawRightString(x + width - 18, cursor + 42, money(machine["price"]))
 
     c.restoreState()
     c.setStrokeColor(RULE)
@@ -239,7 +244,7 @@ def draw_notes(c, top):
         "Currency is the United States dollar (USD).",
         "Trade term is EXW.",
         "Freight to the Guangzhou warehouse is included in each price.",
-        "Each line is the price of one machine.",
+        "Every price is one complete set: CTCP engine, processor, and computer.",
     ]
     box_h = 112
     y = top - box_h
@@ -273,7 +278,11 @@ def build():
     c = canvas.Canvas(str(OUT), pagesize=A4)
     c.setTitle("CTP Machine Quotation Q-CTP-20261015")
     c.setAuthor("CTP quotation")
-    c.setSubject("CRON UVP-4664GX+, AMSKY T864, and AMSKY U8128. EXW, freight to Guangzhou warehouse included.")
+    c.setSubject(
+        "CRON UVP-4664GX+, AMSKY T864, and AMSKY U8128. "
+        "Each price is one complete set: CTCP engine, processor, and computer. "
+        "EXW, freight to Guangzhou warehouse included."
+    )
     c.setCreator("CTP machine quotation")
 
     c.setFillColor(PAPER)
