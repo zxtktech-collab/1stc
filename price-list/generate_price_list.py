@@ -38,22 +38,22 @@ OFFERS = [
     {
         "format": "A1",
         "channels": 32,
-        "price": 7000,
+        "price": 8000,
     },
     {
         "format": "A1",
         "channels": 48,
-        "price": 8000,
+        "price": 9000,
     },
     {
         "format": "A2",
         "channels": 32,
-        "price": 8000,
+        "price": 9000,
     },
     {
         "format": "A2",
         "channels": 48,
-        "price": 9000,
+        "price": 10000,
     },
 ]
 
@@ -139,7 +139,7 @@ def draw_header(c):
     )
     c.setFillColor(Color(0.78, 0.82, 0.86))
     c.setFont("Inter", 9)
-    c.drawRightString(PAGE_W - MARGIN, PAGE_H - 72, "27 September 2026")
+    c.drawRightString(PAGE_W - MARGIN, PAGE_H - 72, "16 October 2026")
     c.setFont("Inter", 8.5)
     c.drawRightString(PAGE_W - MARGIN, PAGE_H - 88, "Prices in US dollars")
 

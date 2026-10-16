@@ -38,19 +38,19 @@ MACHINES = [
         "brand": "CRON",
         "model": "UVP-4664GX+",
         "detail": "64-channel UV CTP",
-        "price": 14000,
+        "price": 15000,
     },
     {
         "brand": "AMSKY",
         "model": "T864",
         "detail": "64-channel thermal CTP",
-        "price": 16000,
+        "price": 17000,
     },
     {
         "brand": "AMSKY",
         "model": "U8128",
         "detail": "128-channel UV CTP",
-        "price": 20000,
+        "price": 21000,
     },
 ]
 
@@ -117,10 +117,10 @@ def draw_header(c):
 
     c.setFillColor(Color(0.78, 0.82, 0.86))
     c.setFont("Inter", 9)
-    c.drawRightString(PAGE_W - MARGIN, PAGE_H - 50, "15 October 2026")
+    c.drawRightString(PAGE_W - MARGIN, PAGE_H - 50, "16 October 2026")
     c.setFont("Inter-Medium", 9)
     c.setFillColor(white)
-    c.drawRightString(PAGE_W - MARGIN, PAGE_H - 68, "Q-CTP-20261015")
+    c.drawRightString(PAGE_W - MARGIN, PAGE_H - 68, "Q-CTP-20261016")
     c.setFillColor(Color(0.78, 0.82, 0.86))
     c.setFont("Inter", 8.5)
     c.drawRightString(PAGE_W - MARGIN, PAGE_H - 86, "Prices in US dollars")
@@ -270,13 +270,13 @@ def draw_notes(c, top):
 
     c.setFillColor(MUTED)
     c.setFont("Inter", 8)
-    c.drawString(MARGIN, 26, "Quotation Q-CTP-20261015  ·  CTP machines")
+    c.drawString(MARGIN, 26, "Quotation Q-CTP-20261016  ·  CTP machines")
     c.drawRightString(PAGE_W - MARGIN, 26, "Page 1 of 1")
 
 
 def build():
     c = canvas.Canvas(str(OUT), pagesize=A4)
-    c.setTitle("CTP Machine Quotation Q-CTP-20261015")
+    c.setTitle("CTP Machine Quotation Q-CTP-20261016")
     c.setAuthor("CTP quotation")
     c.setSubject(
         "CRON UVP-4664GX+, AMSKY T864, and AMSKY U8128. "
